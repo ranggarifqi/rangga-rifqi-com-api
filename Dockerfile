@@ -1,5 +1,8 @@
 # Use an official Node.js runtime as the base image
-FROM node:14
+FROM node:18-alpine
+
+RUN apk update
+RUN apk add bash
 
 # Set the working directory in the container to /app
 WORKDIR /app

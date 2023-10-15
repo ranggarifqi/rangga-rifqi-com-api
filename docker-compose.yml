@@ -1,0 +1,24 @@
+version: '3'
+volumes:
+  rangga-rifqi-com-be:
+services:
+  postgres:
+    image: postgres:14.5-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USERNAME}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - '54321:5432'
+    volumes:
+      - rangga-rifqi-com-be:/var/lib/postgresql/data
+  api:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - 1337:1337
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: bash -c "npm install && npm run develop"

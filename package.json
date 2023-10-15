@@ -7,7 +7,8 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "docker:dev": "NODE_ENV=development docker-compose --env-file ./db.env up"
   },
   "devDependencies": {},
   "dependencies": {
