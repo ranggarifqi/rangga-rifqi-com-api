@@ -2,7 +2,7 @@ name: test
 on:
   pull_request:
     branches:
-      - feature/github-action
+      - main
 jobs:
   build-test-deploy:
     runs-on: ubuntu-latest
