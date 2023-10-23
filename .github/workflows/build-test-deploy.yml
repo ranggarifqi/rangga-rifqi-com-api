@@ -4,7 +4,7 @@ on:
     branches:
       - "main"
 jobs:
-  build-test-deploy:
+  build-push:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -27,6 +27,9 @@ jobs:
         with:
           push: true
           tags: ranggarifqi/rangga-rifqi-com-api:latest
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
       - name: Setup SSH Agent
         uses: webfactory/ssh-agent@v0.7.0
         with:
