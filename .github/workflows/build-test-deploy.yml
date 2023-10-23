@@ -28,6 +28,7 @@ jobs:
           push: true
           tags: ranggarifqi/rangga-rifqi-com-api:latest
   deploy:
+    needs: build-push
     runs-on: ubuntu-latest
     steps:
       - name: Setup SSH Agent
