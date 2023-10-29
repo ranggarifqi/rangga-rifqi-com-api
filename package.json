@@ -8,10 +8,12 @@
     "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi",
-    "docker:dev": "NODE_ENV=development docker-compose --env-file ./db.env up"
+    "docker:dev": "NODE_ENV=development docker-compose --env-file ./db.env up",
+    "docker:build": "NODE_ENV=development docker-compose --env-file ./db.env build"
   },
   "dependencies": {
     "@strapi/plugin-i18n": "4.14.4",
+    "@strapi/plugin-seo": "^1.9.6",
     "@strapi/plugin-users-permissions": "4.14.4",
     "@strapi/strapi": "4.14.4",
     "pg": "8.8.0",
