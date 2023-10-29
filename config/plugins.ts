@@ -15,9 +15,15 @@ export default function ({ env }) {
           },
         },
         actionOptions: {
-          upload: {},
-          uploadStream: {},
-          delete: {},
+          upload: {
+            Bucket: env("S3_BUCKET"),
+          },
+          uploadStream: {
+            Bucket: env("S3_BUCKET"),
+          },
+          delete: {
+            Bucket: env("S3_BUCKET"),
+          },
         },
       },
     },
