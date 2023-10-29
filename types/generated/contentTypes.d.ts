@@ -699,6 +699,7 @@ export interface ApiBlogBlog extends Schema.CollectionType {
     >;
     summary: Attribute.Text & Attribute.Required;
     slug: Attribute.String & Attribute.Required & Attribute.Unique;
+    seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -804,6 +805,12 @@ export interface ApiPortfolioPortfolio extends Schema.CollectionType {
       }>;
     summary: Attribute.Text &
       Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    seo: Attribute.Component<'shared.seo'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
